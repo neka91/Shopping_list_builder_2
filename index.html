@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Shopping List</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h4>Please indicate shopping item:</h4>
+    <div>
+        <input type="text" id="newItem">
+        <input type="button" id="addNewItem" value="Add to list">
+    </div>
+    <div id="output">
+        <h1>Shopping List</h1>
+        <ol id="shopList"></ol>
+    </div>
+
+    <script>
+        document.getElementById('addNewItem').onclick = function () {
+            createShopList();
+        }
+
+        function createShopList() {
+            let newItem = document.getElementById('newItem');
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode(newItem.value));
+            document.getElementById('shopList').appendChild(li);
+            newItem.value = '';
+        }
+    </script>
+</body>
+
+</html>
